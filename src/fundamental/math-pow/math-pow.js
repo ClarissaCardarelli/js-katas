@@ -18,6 +18,14 @@ You can't use Math.pow(), the goal is to recreate this function!
 
 // TODO add your code here
 
+function pow(number1, number2) {
+  let n1 = Number(number1);
+  let n2 = Number(number2);
+
+  if (isNaN(n1) || isNaN(n2)) return NaN;
+  return n1 ** n2;
+}
+
 // Begin of tests
 const assert = require("assert");
 

@@ -14,6 +14,25 @@ You can't use Math.min(), the goal is to recreate this function!
 
 // TODO add your code here
 
+function min(number1, number2) {
+  let n1 = Number(number1);
+  let n2 = Number(number2);
+
+  //   if (n1 > n2) {
+  //     return n2;
+  //   } else if (n2 > n1) {
+  //     return n1;
+  //   } else if (n1 === n2) {
+  //     return 0;
+  //   } else {
+  //     return NaN;
+  //   }
+
+  if (isNaN(n1) || isNaN(n2)) return NaN;
+  if (n1 === n2) return 0;
+  return n1 > n2 ? n2 : n1;
+}
+
 // Begin of tests
 const assert = require("assert");
 
