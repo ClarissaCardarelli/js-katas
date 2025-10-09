@@ -18,4 +18,28 @@ Add you own tests.
 
 // TODO add your code here
 
+function countChar(word, character) {
+  if (
+    typeof word !== "string" ||
+    typeof character !== "string" ||
+    character.length !== 1
+  )
+    return -1;
+
+  //   let result = word
+  //     .split("")
+  //     .reduce((acc, letter) => acc + (letter === character), 0);
+  //   return result;
+  // above we are changing the string to an array in order to use .reduce
+
+  let count = 0;
+  for (const letter of word) {
+    if (letter === character) count++;
+  }
+  return count;
+
+  //above way shows looping thru string with for of loop
+  //const bc letter never changes and let bc count changes
+}
+
 module.exports = countChar;
