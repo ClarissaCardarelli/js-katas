@@ -16,6 +16,28 @@ If a value of the argument is not 1 or 2, return "Illegal argument".
 */
 // TODO add your code here
 
+function isValidTeam(team) {
+  return team === 1 || team === 2;
+}
+
+function getScore(array) {
+  if (!Array.isArray(array) || !array.every(isValidTeam))
+    return "Illegal argument";
+
+  let team1Score = array.filter((team) => team === 1).length;
+  let team2Score = array.reduce((acc, team) => acc + (team === 2), 0);
+
+  let message =
+    team1Score === team2Score
+      ? "draw"
+      : `team ${team1Score > team2Score ? "1" : "2"} wins the game`;
+
+  return `${team1Score}-${team2Score} : ${message}`;
+}
+
+//dot length more readable
+//how to "count" using reduce = acc + 1 (or rather "+ true condition"), not acc + item (usual use)
+
 // Begin of tests
 const assert = require("assert");
 assert.strictEqual(typeof getScore, "function");
