@@ -40,6 +40,8 @@ function countChar(word, character) {
 
   //above way shows looping thru string with for of loop
   //const bc letter never changes and let bc count changes
+
+  //DID NOT WRITE OWN TESTS
 }
 
 module.exports = countChar;

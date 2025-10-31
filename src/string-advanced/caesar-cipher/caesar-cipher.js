@@ -19,6 +19,31 @@ Add you own tests.
 
 // TODO add your code here
 
+function cipher(word, nbShift) {
+  if (typeof word !== "string" || typeof nbShift !== "number") return "Invalid";
+
+  const abc = "abcdefghijklmnopqrstuvwxyz";
+  let newWord = "";
+
+  for (const letter of word) {
+    let index = abc.indexOf(letter);
+
+    let newIndex = index + nbShift;
+
+    if (newIndex >= 26) {
+      newIndex -= 26;
+    } else if (newIndex <= 0) {
+      newIndex += 26;
+    }
+
+    newWord += abc.charAt(newIndex);
+  }
+
+  return newWord;
+}
+
+console.log(cipher("ab", 1));
+
 // Begin of tests
 const assert = require("assert");
 

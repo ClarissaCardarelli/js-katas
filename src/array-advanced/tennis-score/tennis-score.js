@@ -30,8 +30,36 @@ Add you own tests.
 
 // TODO add your code here
 
+function getScore(arrayOfPoints) {
+  // if (!Array.isArray(arrayOfPoints) || arrayOfPoints.length < 1)
+  //   return "Invalid";
+  // arrayOfPoints.forEach((element) => {
+  //   if (element !== 1 && element !== 2)
+  //     throw new TypeError("Not a valid value");
+  // });
+
+  const player1 = arrayOfPoints.filter((player) => player === 1).length;
+  console.log({ player1 });
+
+  const player2 = arrayOfPoints.filter((player) => player === 2).length;
+  console.log({ player2 });
+
+  let tennisScores = ["love", "15", "30", "40", "*"];
+
+  let result = `${tennisScores[player1]}-${tennisScores[player2]}`;
+
+  if (result === "40-40") return "deuce";
+  if (result === "*-40") return "ad in";
+  if (result === "40-*") return "ad out";
+
+  return result;
+}
+
+console.log(getScore([3, 4]));
+
 // Begin of tests
 const assert = require("assert");
+const { loadEnvFile } = require("process");
 
 assert.strictEqual(typeof getScore, "function");
 assert.strictEqual(getScore.length, 1);
