@@ -19,6 +19,16 @@ If `n` is null or not a number, throw a TypeError.
 
 // TODO add your code here
 
+function build(n) {
+  let result = [];
+  for (let i = 1; i <= n; i++) {
+    let level = "*".repeat(i);
+    result.push(level);
+  }
+  return result;
+}
+console.log(build(5));
+
 // Begin of tests
 const assert = require("assert");
 
