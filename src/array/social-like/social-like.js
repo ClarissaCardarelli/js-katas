@@ -10,18 +10,34 @@ Create a function `getLikes` which receives an array of names, and returns:
 // TODO add your code here
 
 function getLikes(array) {
+  // switch (array.length) {
+  //   case 0:
+  //     return "Be the first to like this";
+
+  //   case 1:
+  //     return `${array[0]} likes this`;
+
+  //   case 2:
+  //     return `${array[0]} and ${array[1]} like this`;
+
+  //   default:
+  //     return `${array[0]} and ${array.length - 1} other people like this`;
+  // }
+
+  let [a, b, ...rest] = array;
+
   switch (array.length) {
     case 0:
       return "Be the first to like this";
 
     case 1:
-      return `${array[0]} likes this`;
+      return `${a} likes this`;
 
     case 2:
-      return `${array[0]} and ${array[1]} like this`;
+      return `${a} and ${b} like this`;
 
     default:
-      return `${array[0]} and ${array.length - 1} other people like this`;
+      return `${a} and ${rest.length} other people like this`;
   }
 }
 
