@@ -12,6 +12,12 @@ Bonus : do not use a loop
 
 // TODO add your code here
 
+const uniq = (array) => {
+  return array.filter(
+    (item, index) => index === 0 || item !== array[index - 1]
+  );
+};
+
 // Begin of tests
 const assert = require("assert");
 
