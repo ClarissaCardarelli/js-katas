@@ -28,6 +28,14 @@ Don't mutate the parameter.
 
 // TODO add your code here
 
+const censor = (sentences, word) => {
+  if (!word) return sentences;
+  let regex = new RegExp(`\\b${word}\\b`, "gi");
+  return sentences.map((sentence) =>
+    sentence.replaceAll(regex, "*".repeat(word.length))
+  );
+};
+
 // Begin of tests
 const assert = require("assert");
 
