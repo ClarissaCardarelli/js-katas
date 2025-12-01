@@ -9,6 +9,10 @@ Don't mutate the parameter.
 
 // TODO add your code here
 
+const odd = (array) => {
+  return array.filter((number) => number % 2 !== 0);
+};
+
 // Begin of tests
 const assert = require("assert");
 
